@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-
 class HomeController extends Controller
 {
     /**
@@ -32,22 +31,7 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        
-        if($user->status == 'secretaire')
-        {
-            $secretaire = secretaire::where ('userId', $user->id)->first();
-            return view ('secretaires.dashboard',compact('secretaire'));
-        }
-
-        elseif($user->status == 'patient')
-        {
-            $patients = patients::where ('userId', $user->id)->first();
-
-            return view ('patients.dashboard',compact('patients'));
-
-        }
-
-        elseif($user->status == 'medecin')
+        if($user->statut == 'medecin')
         {
             $medecins = medecins::where ('userId', $user->id)->first();
 
@@ -55,14 +39,20 @@ class HomeController extends Controller
 
         }
 
+        elseif($user->statut == 'patient')
+        {
+            $patients = patients::where ('userId', $user->id)->first();
+
+            return view ('patients.dashboard',compact('patients'));
+
+        }
+        
         else
         {
           return view('home');  
         }
         
-    
     }
   
-
     }
 

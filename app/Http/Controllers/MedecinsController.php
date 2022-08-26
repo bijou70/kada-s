@@ -14,6 +14,11 @@ class MedecinsController extends Controller
       {
           return view('medecins.medecinRegister');
       }
+
+      public function dashboard()
+      {
+          return view('medecins.dashboard');
+      }
   
       public function registerMedecin(request $request)
       //ici nous allons definir les normes qui doivent respectés nos diffèrents champs
@@ -46,12 +51,14 @@ class MedecinsController extends Controller
                               'userId' => $user->id,
                               'nom' => $request['nom'],
                               'prenom' => $request['prenom'],
+                              'sexe' => $request['sexe'],                           
+                              'specialite' => $request['specialite'],
                               'telephone' => $request['telephone'],
                               'email' => $request['email'],
                               'password' => bcrypt($request['password'])
                           ]
                       );
-                      return redirect('/medecinRegister');
+                      return view('medecins.medecinRegister');
                   }
   
           }

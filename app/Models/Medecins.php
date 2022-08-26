@@ -11,6 +11,8 @@ class Medecins extends Model
     protected $fillable = [
         'nom',
         'prenom',
+        'sexe',
+        'specialite',
         'email',
         'telephone',
         'password',

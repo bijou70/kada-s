@@ -10,7 +10,18 @@ class PatientsController extends Controller
      //cette méthode est conçu uniquement pour afficher la page d'inscription d'un patient
      public function viewForm()
      {
+         return view('patients.dashboard');
+     }
+
+     public function ajout()
+     {
          return view('patients.patientRegister');
+     }
+
+
+     public function ayira()
+     {
+        return view('todash');
      }
  
      public function registerPatient(request $request)
@@ -20,6 +31,9 @@ class PatientsController extends Controller
              [
                  'nom' => ['required', 'string'],
                  'prenom' => ['required', 'string'],
+                 'sexe' => ['required', 'string'],
+                 'fonction' => ['required', 'string'],
+                 'adresse' => ['required', 'string'],
                  'email' => ['required', 'string'],
                  'telephone' => ['required','string'],
                  'password' => ['required', 'string', 'min:5', 'confirmed'],
@@ -44,6 +58,9 @@ class PatientsController extends Controller
                              'userId' => $user->id,
                              'nom' => $request['nom'],
                              'prenom' => $request['prenom'],
+                             'sexe' => $request['sexe'],
+                             'fonction' => $request['fonction'],
+                             'adresse' => $request['adresse'],
                              'telephone' => $request['telephone'],
                              'email' => $request['email'],
                              'password' => bcrypt($request['password'])

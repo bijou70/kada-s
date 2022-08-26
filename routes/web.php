@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,22 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('secreRegister');
+    return view('Welcome');
 });
 
-Route::get('/', function () {
-    return view('patientRegister');
-});
+
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/secre-register', [App\Http\controllers\SecretaireController::class, 'viewForm'])->name('secre.formview');
-Route::post('/secre-create',[App\Http\controllers\SecretaireController::class,'registerSecre'])->name('secre.create');
-
 
 Route::get('/patient-register', [App\Http\controllers\PatientsController::class, 'viewForm'])->name('patient.formview');
+Route::get('/patient-registration', [App\Http\controllers\PatientsController::class, 'ajout'])->name('patient.formviewadd');
+
+Route::get('/montrerdash', [App\Http\controllers\PatientsController::class, 'ayira'])->name('toutdashboard');
+
+
+Route::get('/montrerdv', [App\Http\controllers\rendezvousController::class, 'monrender'])->name('rdv');
+
 Route::post('/patient-create',[App\Http\controllers\PatientsController::class,'registerPatient'])->name('patient.create');
 
 

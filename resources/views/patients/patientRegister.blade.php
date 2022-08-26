@@ -53,6 +53,47 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="sexe" class="col-md-4 col-form-label text-md-end">{{ __('Sexe') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="sexe" type="text" class="form-control @error('sexe') is-invalid @enderror" name="sexe" value="{{ old('sexe') }}" required autocomplete="sexe" autofocus>
+
+                                @error('sexe')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                         </div>   
+                            <div class="row mb-3">
+                                <label for="fonction" class="col-md-4 col-form-label text-md-end">{{ __('Fonction') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="fonction" type="text" class="form-control @error('fonction') is-invalid @enderror" name="fonction" value="{{ old('fonction') }}" required autocomplete="prenom" autofocus>
+    
+                                    @error('fonction')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>  
+
+                                <div class="row mb-3">
+                                    <label for="adresse" class="col-md-4 col-form-label text-md-end">{{ __('Adresse') }}</label>
+        
+                                    <div class="col-md-6">
+                                        <input id="adresse" type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" value="{{ old('adresse') }}" required autocomplete="adresse" autofocus>
+        
+                                        @error('adresse')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                        <div class="row mb-3">
                             <label for="telephone" class="col-md-4 col-form-label text-md-end">{{ __('Telephone') }}</label>
 
                             <div class="col-md-6">

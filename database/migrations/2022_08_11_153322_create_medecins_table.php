@@ -17,6 +17,8 @@ class CreateMedecinsTable extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
+            $table->string('sexe');
+            $table->string('specialite');
             $table->string('telephone');
             $table->string('email');
             $table->string('password');

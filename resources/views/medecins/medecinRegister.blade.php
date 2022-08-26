@@ -43,15 +43,43 @@
 
                             <div class="col-md-6">
                                 <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus>
-
                                 @error('prenom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
 
+
+                            </div>
+                            <div class="row mb-3">
+                                <label for="sexe" class="col-md-4 col-form-label text-md-end">{{ __('Sexe') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="sexe" type="text" class="form-control @error('sexe') is-invalid @enderror" name="sexe" value="{{ old('sexe') }}" required autocomplete="sexe" autofocus>
+    
+                                    @error('sexe')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="specialite" class="col-md-4 col-form-label text-md-end">{{ __('Spécialité') }}</label>
+        
+                                    <div class="col-md-6">
+                                        <input id="specialite" type="text" class="form-control @error('specialite') is-invalid @enderror" name="specialite" value="{{ old('specialite') }}" required autocomplete="specialite" autofocus>
+        
+                                        @error('specialite')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                        </div>
                         <div class="row mb-3">
                             <label for="telephone" class="col-md-4 col-form-label text-md-end">{{ __('Telephone') }}</label>
 
